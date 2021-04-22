@@ -1,0 +1,21 @@
+for ($t=170;$t -lt 190;$t++)
+{
+if (Test-Connection 192.168.124.$t -Count 1 -ErrorAction SilentlyContinue)
+    {
+    Write-Host "192.168.124.$t"
+    Get-WMIObject -Class Win32_ComputerSystem -Computer "192.168.124.$t" | Select-Object Username
+    Write-Host "......"
+    }else {
+		Write-Host "192.168.124.$t  --> Not found"
+	    Write-Host "   
+		  _____________
+		< КИРИЛЛЛЛЛЛЛЛ >
+		  -------------
+		 	      \    ^__^
+				   \   (oo)\________
+					   (__)\         )\/\
+							||----w||
+							||     ||
+		"	
+	}
+}
